@@ -6,6 +6,86 @@
         <meta name='author' content='Fernando Magrosoto V.' />
         <meta name='description' content='Demo de carrusel tipo persiana
         hecho en JavaScript y sin jQuery' />
+        <!-- ESTILOS -->
+        <style>
+            body {
+                background: rgb(245,245,245);
+                color: rgb(51,51,51);
+                font-family: Georgia, serif;
+                font-size: 100%;
+            }
+            .contenedor {
+                position: relative;
+                background: white;
+                width: 43.75em;
+                padding: .625em;
+                border: .0625em lightgray solid;
+                border-radius: .5em;
+                margin: 3.125em auto 0 auto;
+                overflow: auto;
+            }
+            header {
+                margin: 0 0 3.125em 0;
+                padding-bottom: 1.5625em;
+                border-bottom: .0625em lightgray solid;
+            }
+            header h1 {
+                margin: 0 0 .3125em 0;
+                text-shadow: .0625em .0625em .3125em rgba(0,0,0,.3);
+            }
+            header p {
+                margin: 0 0 .3125em 0;
+                padding: 0;
+                line-height: 1.5em;
+                color: rgb(51,51,102);
+            }
+            header p:last-child{
+                margin-bottom: 0;
+            }
+            
+            /* ===== AREA CARRUSEL ===== */
+            #carrusel-ventana {
+                position: relative;
+                width: 600px; /* En px por requerimiento del layout */
+                height: 100px; /* En px por requerimiento del layout */
+                border: .125em gray solid;
+                margin: auto;
+                box-shadow: .0625em .0625em .3125em rgba(0,0,0,.3);
+            }
+            /* ===== fin ===== */
+            
+            .area-notificacion {
+                font-size: .75em; /* ahora se divide todo entre 12 */
+                width: 48em;
+                background: rgb(250,250,250);
+                color: rgb(150,51,51);
+                margin: 1em auto 0 auto;
+                padding: .625em;
+                border: .083333333em gray dashed;
+            }
+            
+            footer {
+                margin: 3.125em 0 0 0;
+                padding-top: 1.5625em;
+                border-top: .0625em lightgray solid;
+            }
+            footer p {
+                margin: 0 0 .3125em 0;
+                padding: 0;
+                line-height: 1.5em;
+                color: rgb(51,51,102);
+                font-size: .75em;
+                color: rgb(75,75,75);
+            }
+            footer a {
+                color: brown;
+                text-decoration: none;
+            }
+            footer a:hover {
+                color: red;
+            }
+        </style>
+        <!-- fin -->
     </head>
     <body>
         <div class='contenedor'>
@@ -35,7 +115,7 @@
             </section>
             
             <footer>
-                <p>Desarrollo por Fernando Magrosoto V.</p>
+                <p>Desarrollo por: <strong>Fernando Magrosoto V.</strong></p>
                 <p>Copyleft 2013. GNU GPL v3</p>
                 <p><a target='_blank' 
                 href='http://www.twitter.com/fmagrosoto'>
