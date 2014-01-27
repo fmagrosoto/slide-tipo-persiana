@@ -51,10 +51,23 @@
                 border: .125em gray solid;
                 margin: auto;
                 box-shadow: .0625em .0625em .3125em rgba(0,0,0,.3);
+                overflow: hidden;
+            }
+            #carrusel-persiana {
+                position: absolute;
+                height: 100px;
+                top: 0;
+                right: 0;
+                background: gray;
+            }
+            .carrusel-imagen {
+                width: 600px;
+                height: 100px;
+                float: left;
             }
             /* ===== fin ===== */
             
-            .area-notificacion {
+            #area-notificacion {
                 font-size: .75em; /* ahora se divide todo entre 12 */
                 width: 48em;
                 background: rgb(250,250,250);
@@ -73,7 +86,6 @@
                 margin: 0 0 .3125em 0;
                 padding: 0;
                 line-height: 1.5em;
-                color: rgb(51,51,102);
                 font-size: .75em;
                 color: rgb(75,75,75);
             }
@@ -86,6 +98,7 @@
             }
         </style>
         <!-- fin -->
+        <script src='carrusel.js'></script>
     </head>
     <body>
         <div class='contenedor'>
@@ -99,6 +112,7 @@
                     imagen anterior.</p>
             </header>
             
+            <!-- aquí va el carrusel -->
             <section>
                 <div class='area-carrusel'>
                     <div id='carrusel-ventana'>
@@ -111,8 +125,9 @@
                         </div>
                     </div>
                 </div>
-                <div class='area-notificacion'>Notificaciones</div>
+                <div id='area-notificacion'></div>
             </section>
+            <!-- fin de Carrusel -->
             
             <footer>
                 <p>Desarrollo por: <strong>Fernando Magrosoto V.</strong></p>
