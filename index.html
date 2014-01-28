@@ -57,8 +57,9 @@
                 position: absolute;
                 height: 100px;
                 top: 0;
-                right: 0;
+                left: 0;
                 background: gray;
+                transition: all 2s ease-out;
             }
             .carrusel-imagen {
                 width: 600px;
@@ -66,16 +67,6 @@
                 float: left;
             }
             /* ===== fin ===== */
-            
-            #area-notificacion {
-                font-size: .75em; /* ahora se divide todo entre 12 */
-                width: 48em;
-                background: rgb(250,250,250);
-                color: rgb(150,51,51);
-                margin: 1em auto 0 auto;
-                padding: .625em;
-                border: .083333333em gray dashed;
-            }
             
             footer {
                 margin: 3.125em 0 0 0;
@@ -112,22 +103,15 @@
                     imagen anterior.</p>
             </header>
             
-            <!-- aquí va el carrusel -->
             <section>
+                <!-- aquí va el carrusel -->
                 <div class='area-carrusel'>
                     <div id='carrusel-ventana'>
-                        <div id='carrusel-persiana'>
-                            <div class='carrusel-imagen'>
-                                <img 
-                                src='http://lorempixel.com/600/100/business/Placeholder' 
-                                alt='' />
-                            </div>
-                        </div>
+                        <div id='carrusel-persiana' style='width: 600px'></div>
                     </div>
                 </div>
-                <div id='area-notificacion'></div>
+                <!-- fin de Carrusel -->
             </section>
-            <!-- fin de Carrusel -->
             
             <footer>
                 <p>Desarrollo por: <strong>Fernando Magrosoto V.</strong></p>
