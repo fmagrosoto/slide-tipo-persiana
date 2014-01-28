@@ -37,14 +37,16 @@
               */
               var generarNumero = function(min,max) {
                   
-                  // Generar un número
-                  var num = Math.floor(Math.random()*(max-min+1))+min;
-                  
                   // Comprueba la longitud del array...
                   if(usados.length <= (max-min)) {
                       
-                      // ...si aún no lo pasamos, entonces
-                      // agregar al array.
+                      // ...si aún no lo pasamos, entonces...
+                      // generar un número
+                      while(res != false){
+                          var num = Math.floor(Math.random()*(max-min+1))+min;
+                          var res = pasa(num);
+                      }
+                      // y agregar al array.
                       usados.push(num);
                       
                   } else {
@@ -52,6 +54,8 @@
                       // vaciar el array y volver a comenzar.
                       console.info('Comenzar la cuenta.');
                       usados.length = 0;
+                      num = Math.floor(Math.random()*(max-min+1))+min;
+                      usados.push(num);
                       generarNumero(min,max);
                   }
                   
@@ -72,9 +76,11 @@
                */
                var pasa = function(numero){
                    
-                   var res = true;
-                   if(numero in usados){
-                       res = false;
+                   var res = false;
+                   for(var i=0;i<usados.length; i++){
+                       if(numero == usados[i]){
+                           res = true;
+                       }
                    }
                    
                    // Retornar el valor booleano
