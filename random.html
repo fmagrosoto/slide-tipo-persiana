@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8' />
+        <title>Números aleatorios</title>
+        <script>
+        
+            /**
+             * ARRAY DE NÚMEROS USADOS
+             */
+             var usados = new Array();
+             
+             /**
+              * GENERAR NUEVO NÚMERO ALEATORIO
+              * 
+              * Función para generar un nuevo número aleatorio.
+              * Ésta función puede llamarse desde cuaquier
+              * botón o incluso desde cualquier función.
+              * ----------------------------------------
+              * PASO X PASO
+              * 
+              * Primero comprueba que la longitud del array USADOS no
+              * sobrepase el número máximo de elementos, por medio del
+              * valor de MAX.
+              * 
+              * Después, comprueba que el número no haya sido agregdo
+              * al array en una ejecución anterior.
+              * 
+              * Por último, se agrega un elemento al array con el valor
+              * del número generado.
+              * ----------------------------------------
+              * @author Fernando Magrosoto V.
+              * @copyrigt Enero 2014
+              * @param int max El número máximo para generar el número
+              * @param int min El número mínimo para generar el número
+              * @return int El número aleatorio
+              */
+              var generarNumero = function(min,max) {
+                  
+                  // Generar un número
+                  var num = Math.floor(Math.random()*(max-min+1))+min;
+                  
+                  // Comprueba la longitud del array...
+                  if(usados.length <= (max-min)) {
+                      
+                      // ...si aún no lo pasamos, entonces
+                      // agregar al array.
+                      usados.push(num);
+                      
+                  } else {
+                      // si llegamos al máximo, entonces
+                      // vaciar el array y volver a comenzar.
+                      console.info('Comenzar la cuenta.');
+                      usados.length = 0;
+                      generarNumero(min,max);
+                  }
+                  
+                  // Finalmente regresar el valor de num
+                  return num;
+              }
+              // fin de función
+              
+              /**
+               * SABER SI HAY UN NÚMERO REPETIDO
+               * 
+               * Función para saber si hay un número
+               * generado que ya haya sido agregado al
+               * array y retornar un valor booleano
+               * @author Fernando Magrosoto V.
+               * @param int num El número generado
+               * @return bool
+               */
+               var pasa = function(numero){
+                   
+                   var res = true;
+                   if(numero in usados){
+                       res = false;
+                   }
+                   
+                   // Retornar el valor booleano
+                   return res;
+                   
+               }
+               // fin de la función
+               
+               /**
+                * LLAMADA A LA FUNCIÓN
+                */
+                var mostrarNumero = function(){
+                    console.log('El número es: '+generarNumero(1,11));
+                }
+             
+             
+        </script>
+    </head>
+    <body>
+        <h1>Números aleatorios</h1>
+        <hr />
+        <p>
+            <a href='javascript:mostrarNumero();'>Mostrar número</a>&nbsp;
+            <a href='javascript:location.reload();'>Empezar</a>
+        </p>
+        <div id='numeros'></div>
+    </body>
+</html>
